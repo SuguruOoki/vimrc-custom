@@ -14,12 +14,12 @@
 $
 
 # Command Line History (newest to oldest):
-:wq
 :q
 :w
+:q!
+:wq
 :u
 :d
-:q!
 :21
 :1
 :set tags=./tags;
@@ -113,43 +113,44 @@ $
 	    return;
 	}
 ""1	LINE	0
-	git-padd.sh
+	.bash_profile
 "2	LINE	0
-	.vimrc
+	.bashrc
 "3	LINE	0
-	.viminfo
+	git-padd.sh
 "4	LINE	0
-	.vim
+	.vimrc
 "5	LINE	0
-	print($after_contents);
+	.viminfo
 "6	LINE	0
-	print(strlen($before_contents)); 
+	.vim
 "7	LINE	0
-	print(strlen($after_contents));
+	print($after_contents);
 "8	LINE	0
-	}
+	print(strlen($before_contents)); 
 "9	LINE	0
-	if (count($before_contents) !== count($after_contents)){
+	print(strlen($after_contents));
 "q	CHAR	0
 	w
 "-	CHAR	0
 	"
 
 # File marks:
-'0  1  0  ~/.gitignore
-'1  36  0  ~/.gitignore
-'2  108  39  ~/.bashrc
-'3  13  1  ~/workspace/tools/allsql.php
-'4  37  0  ~/workspace/tools/allsql.php
-'5  38  54  ~/workspace/tools/allsql.php
-'6  38  29  ~/workspace/tools/allsql.php
-'7  38  22  ~/workspace/tools/allsql.php
-'8  39  93  ~/workspace/tools/allsql.php
-'9  40  10  ~/workspace/tools/allsql.php
+'0  12  0  ~/.gitignore
+'1  1  0  ~/.gitignore
+'2  34  0  ~/.gitignore
+'3  108  39  ~/.bashrc
+'4  13  1  ~/workspace/tools/allsql.php
+'5  37  0  ~/workspace/tools/allsql.php
+'6  38  54  ~/workspace/tools/allsql.php
+'7  38  29  ~/workspace/tools/allsql.php
+'8  38  22  ~/workspace/tools/allsql.php
+'9  39  93  ~/workspace/tools/allsql.php
 
 # Jumplist (newest first):
+-'  12  0  ~/.gitignore
 -'  1  0  ~/.gitignore
--'  36  0  ~/.gitignore
+-'  34  0  ~/.gitignore
 -'  108  39  ~/.bashrc
 -'  13  1  ~/workspace/tools/allsql.php
 -'  37  0  ~/workspace/tools/allsql.php
@@ -250,10 +251,13 @@ $
 # History of marks within files (newest to oldest):
 
 > ~/.gitignore
-	"	1	0
-	.	51	0
-	+	36	0
-	+	51	0
+	"	12	0
+	^	12	0
+	.	12	0
+	+	34	0
+	+	49	0
+	+	13	0
+	+	12	0
 
 > ~/.bashrc
 	"	108	39
