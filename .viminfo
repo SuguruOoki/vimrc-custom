@@ -113,43 +113,43 @@ $
 	    return;
 	}
 ""1	LINE	0
-	.vimrc
+	git-padd.sh
 "2	LINE	0
-	.viminfo
+	.vimrc
 "3	LINE	0
-	.vim
+	.viminfo
 "4	LINE	0
-	print($after_contents);
+	.vim
 "5	LINE	0
-	print(strlen($before_contents)); 
+	print($after_contents);
 "6	LINE	0
-	print(strlen($after_contents));
+	print(strlen($before_contents)); 
 "7	LINE	0
-	}
+	print(strlen($after_contents));
 "8	LINE	0
-	if (count($before_contents) !== count($after_contents)){
+	}
 "9	LINE	0
-	print($max);
+	if (count($before_contents) !== count($after_contents)){
 "q	CHAR	0
 	w
 "-	CHAR	0
 	"
 
 # File marks:
-'0  36  0  ~/.gitignore
-'1  108  39  ~/.bashrc
-'2  13  1  ~/workspace/tools/allsql.php
-'3  37  0  ~/workspace/tools/allsql.php
-'4  38  54  ~/workspace/tools/allsql.php
-'5  38  29  ~/workspace/tools/allsql.php
-'6  38  22  ~/workspace/tools/allsql.php
-'7  39  93  ~/workspace/tools/allsql.php
-'8  40  10  ~/workspace/tools/allsql.php
-'9  18  26  ~/workspace/tools/allsql.php
+'0  1  0  ~/.gitignore
+'1  36  0  ~/.gitignore
+'2  108  39  ~/.bashrc
+'3  13  1  ~/workspace/tools/allsql.php
+'4  37  0  ~/workspace/tools/allsql.php
+'5  38  54  ~/workspace/tools/allsql.php
+'6  38  29  ~/workspace/tools/allsql.php
+'7  38  22  ~/workspace/tools/allsql.php
+'8  39  93  ~/workspace/tools/allsql.php
+'9  40  10  ~/workspace/tools/allsql.php
 
 # Jumplist (newest first):
--'  36  0  ~/.gitignore
 -'  1  0  ~/.gitignore
+-'  36  0  ~/.gitignore
 -'  108  39  ~/.bashrc
 -'  13  1  ~/workspace/tools/allsql.php
 -'  37  0  ~/workspace/tools/allsql.php
@@ -246,15 +246,14 @@ $
 -'  762  5  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
 -'  776  42  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
 -'  779  47  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
--'  780  14  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
--'  25  0  ~/workspace/tools/allsql.php
 
 # History of marks within files (newest to oldest):
 
 > ~/.gitignore
-	"	36	0
-	.	36	0
+	"	1	0
+	.	51	0
 	+	36	0
+	+	51	0
 
 > ~/.bashrc
 	"	108	39
