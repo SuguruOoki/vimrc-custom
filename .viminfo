@@ -14,11 +14,11 @@
 $
 
 # Command Line History (newest to oldest):
+:wq
 :q
 :q!
 :w
 :u
-:wq
 :d
 :21
 :1
@@ -139,18 +139,20 @@ $
 	"
 
 # File marks:
-'0  9  0  ~/.git/config
-'1  296  1  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
-'2  355  14  ~/workspace/dev-environment/core/htdocs/js/ne_ga7300.js
-'3  11  14  ~/workspace/dev-environment/core/application/MyClass/SyohinLogic/Syohins/Syohin.php
-'4  839  2  ~/workspace/dev-environment/core/application/controllers/Api/V1/JyuchuController.php
-'5  7  0  ~/workspace/dev-environment/core/batch/ne_syohinCodeHimodukeCsvImport.php
-'6  1  0  ~/workspace/dev-environment/core/application/MyClass/ne_syohinCodeHimodukeCsv.php
-'7  13  0  ~/workspace/dev-environment/core/batch/ne_syohinCodeHimodukeCsvImport.php
-'8  100  4  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
-'9  326  7  ~/workspace/dev-environment/core/application/controllers/UsersearchsyohinController.php
+'0  9  7  ~/.gitignore
+'1  9  0  ~/.git/config
+'2  296  1  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
+'3  355  14  ~/workspace/dev-environment/core/htdocs/js/ne_ga7300.js
+'4  11  14  ~/workspace/dev-environment/core/application/MyClass/SyohinLogic/Syohins/Syohin.php
+'5  839  2  ~/workspace/dev-environment/core/application/controllers/Api/V1/JyuchuController.php
+'6  7  0  ~/workspace/dev-environment/core/batch/ne_syohinCodeHimodukeCsvImport.php
+'7  1  0  ~/workspace/dev-environment/core/application/MyClass/ne_syohinCodeHimodukeCsv.php
+'8  13  0  ~/workspace/dev-environment/core/batch/ne_syohinCodeHimodukeCsvImport.php
+'9  100  4  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
 
 # Jumplist (newest first):
+-'  9  7  ~/.gitignore
+-'  13  0  ~/.gitignore
 -'  9  0  ~/.git/config
 -'  1  0  ~/.git/config
 -'  296  1  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
@@ -249,10 +251,18 @@ $
 -'  11  14  ~/workspace/dev-environment/core/application/MyClass/SyohinLogic/Syohins/Syohin.php
 -'  1  0  ~/workspace/dev-environment/core/application/MyClass/SyohinLogic/Syohins/Syohin.php
 -'  839  2  ~/workspace/dev-environment/core/application/controllers/Api/V1/JyuchuController.php
--'  160  2  ~/workspace/dev-environment/core/application/controllers/Api/V1/JyuchuController.php
--'  7  0  ~/workspace/dev-environment/core/batch/ne_syohinCodeHimodukeCsvImport.php
 
 # History of marks within files (newest to oldest):
+
+> ~/.gitignore
+	"	9	7
+	^	9	8
+	.	9	7
+	+	35	0
+	+	50	0
+	+	14	0
+	+	13	0
+	+	9	7
 
 > ~/.git/config
 	"	9	0
@@ -316,15 +326,6 @@ $
 	+	381	0
 	+	381	3
 	+	361	3
-
-> ~/.gitignore
-	"	12	0
-	^	12	0
-	.	12	0
-	+	34	0
-	+	49	0
-	+	13	0
-	+	12	0
 
 > ~/.bashrc
 	"	108	39
