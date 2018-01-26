@@ -8,17 +8,17 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/arg_val
+~MSle0~/item_url
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
 :q
-:w
 :q!
-:wq
+:w
 :u
+:wq
 :d
 :21
 :1
@@ -49,6 +49,14 @@ $
 :e ++enc=ISO-2022-JP
 
 # Search String History (newest to oldest):
+?/item_url
+?/ne_:q
+?/ne_TenpoSyohinMst
+?/\%V
+?/%V
+?/selectBidders
+?/BiddersSyohinCode
+?/moru_code
 ?/arg_val
 ? \<file\>
 ?/feed_submission_id
@@ -89,16 +97,8 @@ $
 ?/YAHOO_QUANTITY
 ?/select_
 ?/history
-?/%V
 ?/:qrelation
 ?/:q
-?/admin_admin
-?/$malls
-?/https
-?/価格
-?/price
-?/--ignore-dir
-?/atom
 
 # Expression History (newest to oldest):
 
@@ -113,142 +113,209 @@ $
 	    return;
 	}
 ""1	LINE	0
-	.bash_profile
+	            $tsm->setSyohinCode($syohin_codes);
+	            $tsm->updateTenpoSyohinMst();
 "2	LINE	0
-	.bashrc
+				} else if ($t_mst_syohin_tenpo == 't_mst_syohin_tenpo_bidex') {	//ビッダーズ商品コード変換
+					$bidders_syohin_code = $this->selectBiddersSyohinCode($this->_db, $this->_schema, $this->_syohin_code);
 "3	LINE	0
-	git-padd.sh
+				$sql = $base_sql . " = " . $this->_db->quote($syohin_code_list);
+			}
 "4	LINE	0
-	.vimrc
+			}
 "5	LINE	0
-	.viminfo
+				$syohin_code_list = array_merge(array($syohin_code_list), $set_syohin_sku_list);
 "6	LINE	0
-	.vim
+			} else {
 "7	LINE	0
-	print($after_contents);
+				$syohin_code_list = array_merge($syohin_code_list, $set_syohin_sku_list);
 "8	LINE	0
-	print(strlen($before_contents)); 
+			if (is_array($syohin_code_list)) {
 "9	LINE	0
-	print(strlen($after_contents));
+			// セット商品の項目選択肢も商品紐付けをしたいのでマージする
 "q	CHAR	0
 	w
 "-	CHAR	0
 	"
 
 # File marks:
-'0  12  0  ~/.gitignore
-'1  1  0  ~/.gitignore
-'2  34  0  ~/.gitignore
-'3  108  39  ~/.bashrc
-'4  13  1  ~/workspace/tools/allsql.php
-'5  37  0  ~/workspace/tools/allsql.php
-'6  38  54  ~/workspace/tools/allsql.php
-'7  38  29  ~/workspace/tools/allsql.php
-'8  38  22  ~/workspace/tools/allsql.php
-'9  39  93  ~/workspace/tools/allsql.php
+'0  9  0  ~/.git/config
+'1  296  1  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
+'2  355  14  ~/workspace/dev-environment/core/htdocs/js/ne_ga7300.js
+'3  11  14  ~/workspace/dev-environment/core/application/MyClass/SyohinLogic/Syohins/Syohin.php
+'4  839  2  ~/workspace/dev-environment/core/application/controllers/Api/V1/JyuchuController.php
+'5  7  0  ~/workspace/dev-environment/core/batch/ne_syohinCodeHimodukeCsvImport.php
+'6  1  0  ~/workspace/dev-environment/core/application/MyClass/ne_syohinCodeHimodukeCsv.php
+'7  13  0  ~/workspace/dev-environment/core/batch/ne_syohinCodeHimodukeCsvImport.php
+'8  100  4  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
+'9  326  7  ~/workspace/dev-environment/core/application/controllers/UsersearchsyohinController.php
 
 # Jumplist (newest first):
--'  12  0  ~/.gitignore
--'  1  0  ~/.gitignore
--'  34  0  ~/.gitignore
--'  108  39  ~/.bashrc
--'  13  1  ~/workspace/tools/allsql.php
--'  37  0  ~/workspace/tools/allsql.php
--'  38  54  ~/workspace/tools/allsql.php
--'  39  93  ~/workspace/tools/allsql.php
--'  40  10  ~/workspace/tools/allsql.php
--'  16  0  ~/workspace/tools/allsql.php
--'  18  26  ~/workspace/tools/allsql.php
--'  44  0  ~/workspace/tools/allsql.php
--'  29  5  ~/workspace/tools/allsql.php
--'  130  34  ~/.bashrc
--'  167  8  ~/.bashrc
--'  35  93  ~/workspace/tools/allsql.php
--'  34  11  ~/workspace/tools/allsql.php
--'  30  109  ~/workspace/tools/allsql.php
--'  36  24  ~/workspace/tools/allsql.php
--'  48  2  ~/workspace/tools/allsql.php
--'  31  0  ~/workspace/tools/allsql.php
--'  1  0  ~/workspace/tools/allsql.php
--'  1  0  ~/workspace/tools/alltools.php
--'  11  21  ~/workspace/tools/alltools.php
--'  138  0  ~/workspace/dev-environment/core/batch/ne_HikiateSyohinBatch.php
--'  173  0  ~/workspace/dev-environment/core/batch/ne_HikiateSyohinBatch.php
--'  1  0  ~/workspace/dev-environment/core/batch/ne_HikiateSyohinBatch.php
--'  158  0  ~/.bashrc
--'  12  85  ~/workspace/python/all.py
--'  14  0  ~/workspace/python/all.py
--'  13  0  ~/workspace/python/all.py
--'  9  10  ~/workspace/python/all.py
--'  2  0  ~/workspace/python/all.py
--'  5  19  ~/workspace/python/all.py
--'  21  0  ~/workspace/python/all.py
--'  1  0  ~/workspace/python/all.py
--'  1  0  ~/workspace/dev-environment/core/application/models/LogPageUploadAmazon.php
--'  60  4  ~/workspace/dev-environment/core/application/models/LogPageUploadAmazon.php
--'  36  41  ~/workspace/dev-environment/core/application/models/LogPageUploadAmazon.php
--'  87  41  ~/workspace/dev-environment/core/application/models/LogPageUploadAmazon.php
--'  37  8  ~/workspace/dev-environment/core/application/models/LogPageUploadAmazon.php
--'  20  21  ~/workspace/dev-environment/core/application/models/LogPageUploadAmazon.php
--'  290  3  ~/workspace/dev-environment/core/application/controllers/UsersearchsyohinController.php
--'  328  45  ~/workspace/dev-environment/core/application/controllers/UsersearchsyohinController.php
--'  330  6  ~/workspace/dev-environment/core/application/controllers/UsersearchsyohinController.php
--'  358  18  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
--'  395  2  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
--'  326  28  ~/workspace/dev-environment/core/application/controllers/UsersearchsyohinController.php
--'  7  2  ~/workspace/dev-environment/core/.git/MERGE_MSG
--'  34  55  ~/workspace/dev-environment/core/application/MyClass/DefineJS.php
--'  13  0  ~/workspace/dev-environment/core/application/MyClass/DefineJS.php
--'  1  0  ~/workspace/dev-environment/core/application/MyClass/DefineJS.php
--'  18  0  ~/workspace/dev-environment/core/.git/COMMIT_EDITMSG
--'  13  0  ~/workspace/dev-environment/core/.git/COMMIT_EDITMSG
--'  178  7  ~/.bashrc
+-'  9  0  ~/.git/config
+-'  1  0  ~/.git/config
+-'  296  1  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
+-'  94  17  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
+-'  355  14  ~/workspace/dev-environment/core/htdocs/js/ne_ga7300.js
+-'  251  11  ~/workspace/dev-environment/core/htdocs/js/ne_ga7300.js
+-'  71  11  ~/workspace/dev-environment/core/htdocs/js/ne_ga7300.js
+-'  3  5  ~/workspace/dev-environment/core/htdocs/js/ne_ga7300.js
+-'  1  1  ~/workspace/dev-environment/core/htdocs/js/ne_ga7300.js
+-'  11  14  ~/workspace/dev-environment/core/application/MyClass/SyohinLogic/Syohins/Syohin.php
+-'  1  0  ~/workspace/dev-environment/core/application/MyClass/SyohinLogic/Syohins/Syohin.php
+-'  839  2  ~/workspace/dev-environment/core/application/controllers/Api/V1/JyuchuController.php
+-'  160  2  ~/workspace/dev-environment/core/application/controllers/Api/V1/JyuchuController.php
+-'  7  0  ~/workspace/dev-environment/core/batch/ne_syohinCodeHimodukeCsvImport.php
+-'  13  0  ~/workspace/dev-environment/core/batch/ne_syohinCodeHimodukeCsvImport.php
+-'  1  0  ~/workspace/dev-environment/core/application/MyClass/ne_syohinCodeHimodukeCsv.php
+-'  429  13  ~/workspace/dev-environment/core/application/MyClass/ne_syohinCodeHimodukeCsv.php
+-'  7  0  ~/workspace/dev-environment/core/application/MyClass/ne_syohinCodeHimodukeCsv.php
+-'  1  0  ~/workspace/dev-environment/core/batch/ne_syohinCodeHimodukeCsvImport.php
 -'  100  4  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
--'  127  7  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
--'  128  8  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
--'  129  8  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
--'  130  8  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
--'  131  46  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
--'  135  7  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
--'  150  46  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
--'  124  4  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
--'  76  38  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
--'  78  1  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
--'  75  12  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
--'  397  2  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
--'  373  62  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
--'  369  6  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
--'  1059  36  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
--'  1141  4  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
--'  157  0  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
--'  137  5  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
--'  699  3  ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
--'  169  9  ~/.bashrc
--'  80  13  ~/workspace/dev-environment/core/application/MyClass/ne_queMultiUl.php
--'  236  50  ~/workspace/dev-environment/core/application/MyClass/ne_queMultiUl.php
--'  1  0  ~/workspace/dev-environment/core/application/MyClass/ne_queMultiUl.php
--'  172  7  ~/.bashrc
--'  140  10  ~/.bashrc
--'  13  1  ~/ga.sh
--'  1  9  ~/ga.sh
--'  56  8  ~/workspace/dev-environment/core/application/controllers/Api/V1/Shop/PageController.php
--'  1  0  ~/workspace/dev-environment/core/application/controllers/Api/V1/Shop/PageController.php
--'  610  83  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
--'  647  8  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
--'  662  9  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
--'  712  3  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
--'  724  12  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
--'  725  9  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
--'  732  32  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
--'  733  14  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
--'  735  11  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
--'  740  5  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
--'  750  13  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
--'  762  5  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
--'  776  42  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
--'  779  47  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  326  7  ~/workspace/dev-environment/core/application/controllers/UsersearchsyohinController.php
+-'  290  0  ~/workspace/dev-environment/core/application/controllers/UsersearchsyohinController.php
+-'  1566  20  ~/workspace/dev-environment/core/application/MyClass/SyohinLogic/CsvUpload.php
+-'  1702  0  ~/workspace/dev-environment/core/application/MyClass/SyohinLogic/CsvUpload.php
+-'  1  0  ~/workspace/dev-environment/core/application/MyClass/SyohinLogic/CsvUpload.php
+-'  151  0  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
+-'  358  18  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
+-'  160  34  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
+-'  359  2  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
+-'  379  21  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
+-'  386  0  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
+-'  388  3  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
+-'  389  2  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
+-'  390  3  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
+-'  392  2  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
+-'  382  2  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
+-'  381  1  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
+-'  79  0  ~/workspace/dev-environment/core/application/MyClass/Malls/Syohin/bidders.php
+-'  1  0  ~/workspace/dev-environment/core/application/MyClass/Malls/Syohin/bidders.php
+-'  334  48  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  336  14  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  341  14  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  346  13  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  331  14  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  326  14  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  321  14  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  316  6  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  312  18  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  299  16  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  296  16  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  293  16  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  290  16  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  287  16  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  284  16  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  281  16  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  278  9  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  268  64  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  262  22  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  198  30  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  139  9  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  1566  20  ~/workspace/dev-environment/core/application/MyClass/SyohinLogic/CsvUpload.php
+-'  1702  0  ~/workspace/dev-environment/core/application/MyClass/SyohinLogic/CsvUpload.php
+-'  1  0  ~/workspace/dev-environment/core/application/MyClass/SyohinLogic/CsvUpload.php
+-'  79  0  ~/workspace/dev-environment/core/application/MyClass/Malls/Syohin/bidders.php
+-'  1  0  ~/workspace/dev-environment/core/application/MyClass/Malls/Syohin/bidders.php
+-'  334  48  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  336  14  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  341  14  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  346  13  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  331  14  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  326  14  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  321  14  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  316  6  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  312  18  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  299  16  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  296  16  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  293  16  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  290  16  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  287  16  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  284  16  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  281  16  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  278  9  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  268  64  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  262  22  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  198  30  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  139  9  ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+-'  326  7  ~/workspace/dev-environment/core/application/controllers/UsersearchsyohinController.php
+-'  290  0  ~/workspace/dev-environment/core/application/controllers/UsersearchsyohinController.php
+-'  296  1  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
+-'  94  17  ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
+-'  355  14  ~/workspace/dev-environment/core/htdocs/js/ne_ga7300.js
+-'  251  11  ~/workspace/dev-environment/core/htdocs/js/ne_ga7300.js
+-'  71  11  ~/workspace/dev-environment/core/htdocs/js/ne_ga7300.js
+-'  3  5  ~/workspace/dev-environment/core/htdocs/js/ne_ga7300.js
+-'  1  1  ~/workspace/dev-environment/core/htdocs/js/ne_ga7300.js
+-'  11  14  ~/workspace/dev-environment/core/application/MyClass/SyohinLogic/Syohins/Syohin.php
+-'  1  0  ~/workspace/dev-environment/core/application/MyClass/SyohinLogic/Syohins/Syohin.php
+-'  839  2  ~/workspace/dev-environment/core/application/controllers/Api/V1/JyuchuController.php
+-'  160  2  ~/workspace/dev-environment/core/application/controllers/Api/V1/JyuchuController.php
+-'  7  0  ~/workspace/dev-environment/core/batch/ne_syohinCodeHimodukeCsvImport.php
 
 # History of marks within files (newest to oldest):
+
+> ~/.git/config
+	"	9	0
+
+> ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
+	"	296	1
+	.	158	0
+	+	392	0
+	+	386	0
+	+	158	0
+
+> ~/workspace/dev-environment/core/htdocs/js/ne_ga7300.js
+	"	355	14
+
+> ~/workspace/dev-environment/core/application/MyClass/SyohinLogic/Syohins/Syohin.php
+	"	11	14
+
+> ~/workspace/dev-environment/core/application/controllers/Api/V1/JyuchuController.php
+	"	839	2
+
+> ~/workspace/dev-environment/core/batch/ne_syohinCodeHimodukeCsvImport.php
+	"	7	0
+
+> ~/workspace/dev-environment/core/application/MyClass/ne_syohinCodeHimodukeCsv.php
+	"	1	0
+
+> ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
+	"	100	4
+	.	1139	0
+	+	1139	0
+
+> ~/workspace/dev-environment/core/application/controllers/UsersearchsyohinController.php
+	"	326	7
+	^	326	8
+	.	326	7
+	+	345	47
+	+	326	33
+	+	322	0
+	+	325	23
+	+	326	38
+	+	272	31
+	+	328	138
+	+	326	7
+
+> ~/workspace/dev-environment/core/application/MyClass/SyohinLogic/CsvUpload.php
+	"	1566	20
+	.	1707	0
+	+	1707	0
+
+> ~/workspace/dev-environment/core/application/MyClass/Malls/Syohin/bidders.php
+	"	79	0
+
+> ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
+	"	334	48
+	^	361	3
+	.	361	3
+	+	361	29
+	+	361	41
+	+	361	29
+	+	361	3
+	+	381	0
+	+	381	3
+	+	361	3
 
 > ~/.gitignore
 	"	12	0
@@ -535,21 +602,6 @@ $
 > ~/workspace/dev-environment/core/application/models/LogPageUploadAmazon.php
 	"	1	0
 
-> ~/workspace/dev-environment/core/application/controllers/UsersearchsyohinController.php
-	"	290	3
-	^	328	139
-	.	328	138
-	+	345	47
-	+	326	33
-	+	322	0
-	+	325	23
-	+	326	38
-	+	272	31
-	+	328	138
-
-> ~/workspace/dev-environment/core/application/MyClass/ne_TenpoSyohinMst.php
-	"	358	18
-
 > ~/workspace/dev-environment/core/.git/MERGE_MSG
 	"	7	2
 
@@ -577,11 +629,6 @@ $
 	+	2	0
 	+	4	11
 	+	4	11
-
-> ~/workspace/dev-environment/core/batch/ne_CsvSyohin.php
-	"	100	4
-	.	1139	0
-	+	1139	0
 
 > ~/workspace/dev-environment/core/application/controllers/UsertoolsController.php
 	"	376	0
@@ -650,18 +697,6 @@ $
 
 > ~/workspace/dev-environment/core/application/controllers/Api/V1/Shop/PageController.php
 	"	56	8
-
-> ~/workspace/dev-environment/core/application/controllers/UsertorikomiController.php
-	"	610	83
-	^	361	3
-	.	361	3
-	+	361	29
-	+	361	41
-	+	361	29
-	+	361	3
-	+	381	0
-	+	381	3
-	+	361	3
 
 > ~/workspace/dev-environment/core/tests/unit/source/MyClass/Malls/YahooAuctionTest.php
 	"	1	0
@@ -799,9 +834,6 @@ $
 
 > ~/workspace/dev-environment/core/htdocs/js/ne_ga3010_1.js
 	"	1136	43
-
-> ~/workspace/dev-environment/core/application/controllers/Api/V1/JyuchuController.php
-	"	160	2
 
 > ~/workspace/dev-environment/core/application/controllers/UserlogiyahooController.php
 	"	403	8
@@ -1064,81 +1096,3 @@ $
 	.	7	14
 	+	143	1
 	+	7	14
-
-> ~/workspace/django_apps/TwitPict/request_collect.py
-	"	43	50
-	^	43	51
-	.	43	50
-	+	69	21
-	+	16	17
-	+	24	16
-	+	25	19
-	+	26	23
-	+	27	54
-	+	41	36
-	+	43	50
-	+	39	16
-	+	43	50
-
-> ~/workspace/django_apps/TwitPict/request_colelct.py
-	"	1	0
-
-> ~/workspace/django_apps/TwitPict/rb_collect.rb
-	"	77	2
-	^	77	3
-	.	15	31
-	+	77	0
-	+	14	31
-	+	15	31
-
-> ~/workspace/django_apps/TwitPict/collect.py
-	"	86	9
-	^	36	47
-	.	36	44
-	+	86	0
-	+	17	19
-	+	11	38
-	+	12	88
-	+	13	45
-	+	14	69
-	+	6	0
-	+	2	0
-	+	65	0
-	+	34	47
-	+	36	44
-
-> ~/workspace/django_apps/TwitPict/collecter.py
-	"	20	0
-	^	19	50
-	.	19	36
-	+	13	4
-	+	16	0
-	+	17	12
-	+	19	36
-
-> ~/workspace/django_apps/Vagrantfile
-	"	18	0
-	.	18	0
-	+	15	3
-	+	16	32
-	+	18	0
-	+	16	1
-	+	16	3
-	+	17	3
-	+	18	1
-	+	16	4
-	+	17	4
-	+	1	4
-	+	2	0
-	+	16	3
-	+	18	3
-	+	16	2
-	+	17	2
-	+	16	0
-	+	18	0
-
-> ~/workspace/django_apps/google_api.py
-	"	111	41
-	^	111	42
-	.	111	0
-	+	111	0
